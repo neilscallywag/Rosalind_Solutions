@@ -10,24 +10,25 @@ def helper(k,m,n):
         X = ['a','a']
     return X
 
-
+def newF1(k,m,n):   
+    o = list(random.choice(helper(k,m,n)))
+    p = list(random.choice(helper(k,m,n)))
+    f1 = o + p
+    return f1
+    
 def prob(k,m,n):
-   o = list(random.choice(helper(k,m,n)))
-   p = list(random.choice(helper(k,m,n)))
-   f1 = o + p
    counter = 0
-   for i in range(1000):
-       if ('A' in f1):
-           counter += 1
-           print(counter)
-   return counter
+   r = 100000
+   for i in range(r):
+       q = newF1(k,m,n)
+       if ('A' in q ): 
+           counter += 1          
+       else:
+           counter +=0         
+   return (counter/r)
    
-   
-   
-    
-        
-    
-print(prob(10,2,2))
+  
+print(prob(2,2,2))
     
    
  
